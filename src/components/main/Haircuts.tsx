@@ -28,9 +28,9 @@ function Haircut({ title, options }: { title: string; options: { label: string; 
 
 export default function Haircuts() {
     return(
-        <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
+        <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg border border-pink-100 dark:border-pink-900">
               <div className="bg-gradient-to-r from-pink-600 to-purple-500 py-4 px-8">
-                <h3 className="text-xl font-bold text-white">Haircuts</h3>
+                <h3 className="text-xl font-bold text-white font-extrabold">Haircuts</h3>
               </div>
               <div className="p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
