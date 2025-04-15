@@ -1,7 +1,10 @@
 "use client";
 
 import Hero from "@/components/hero/Hero";
-import Header from "@/components/works/header/Header";
+import FullscreenModal from "@/components/works/FullscreenModal";
+import GalleryGrid from "@/components/works/GalleryGrid";
+import Header from "@/components/works/Header";
+import StyleFilter from "@/components/works/StyleFilter"
 import React, { useState, useMemo } from "react";
 
 export default function WorksPage() {
@@ -56,94 +59,16 @@ const openImage = (work: Work): void => {
       {/* Style category filter */}
       <div className="container mx-auto px-4 py-8">
         <h3 className="text-2xl font-semibold text-center mb-6">My Latest Work</h3>
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          <button
-            className={`px-4 py-2 rounded-full transition duration-300 ${
-              currentCategory === "all" ? "bg-rose-600 text-white" : "bg-white hover:bg-rose-100"
-            }`}
-            onClick={() => setCurrentCategory("all")}
-          >
-            All Styles
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full transition duration-300 ${
-              currentCategory === "haircuts" ? "bg-rose-600 text-white" : "bg-white hover:bg-rose-100"
-            }`}
-            onClick={() => setCurrentCategory("haircuts")}
-          >
-            Haircuts
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full transition duration-300 ${
-              currentCategory === "coloring" ? "bg-rose-600 text-white" : "bg-white hover:bg-rose-100"
-            }`}
-            onClick={() => setCurrentCategory("coloring")}
-          >
-            Coloring
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full transition duration-300 ${
-              currentCategory === "styling" ? "bg-rose-600 text-white" : "bg-white hover:bg-rose-100"
-            }`}
-            onClick={() => setCurrentCategory("styling")}
-          >
-            Styling
-          </button>
-        </div>
+
+        <StyleFilter currentCategory={currentCategory} setCurrentCategory={setCurrentCategory}/>
 
         {/* Gallery grid with larger images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
-          {filteredWorks.map((work, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:shadow-xl"
-              onClick={() => openImage(work)}
-              onKeyDown={(e) => e.key === "Enter" && openImage(work)}
-              role="button"
-              tabIndex={0}
-            >
-              <div className="relative">
-                <img src={work.src} alt={work.title} className="w-full h-96 object-cover" />
-                <div className="absolute top-0 right-0 bg-rose-600 text-white text-xs uppercase tracking-wider font-bold px-3 py-1 m-3 rounded-full">
-                  {work.category}
-                </div>
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="text-xl font-bold">{work.title}</h3>
-                <p className="text-gray-600">{work.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <GalleryGrid filteredWorks={filteredWorks} openImage={openImage} />
       </div>
 
       {/* Fullscreen image viewer modal */}
       {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-20 p-4"
-          onClick={closeImage}
-        >
-          <div
-            className="relative max-w-5xl w-full h-full flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.title}
-              className="max-w-full max-h-full object-contain"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4 text-center">
-              <h3 className="text-xl font-bold">{selectedImage.title}</h3>
-              <p>{selectedImage.description}</p>
-            </div>
-            <button
-              className="absolute top-4 right-4 bg-white text-black w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200"
-              onClick={closeImage}
-            >
-              ✕
-            </button>
-          </div>
-        </div>
+        <FullscreenModal closeImage={closeImage} selectedImage={selectedImage} />
       )}
 
       {/* Footer */}
@@ -206,6 +131,7 @@ const openImage = (work: Work): void => {
           </div>
         </div>
       </footer>
+      
     </div>
   );
 }
