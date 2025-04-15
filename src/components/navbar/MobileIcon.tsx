@@ -6,7 +6,7 @@ interface MobileIconProps {
 export default function MobileIcon({toggleNavBar, showMenu}: MobileIconProps) {
     return (
         <button
-            className="lg:hidden focus:outline-none"
+            className="lg:hidden focus:outline-none hover:scale-90"
             onClick={toggleNavBar}
             aria-label="Toggle navigation menu"
           >

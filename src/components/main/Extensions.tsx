@@ -1,7 +1,7 @@
 export default function Extensions() {
     return(
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
-            <div className="bg-pink-600 py-3 px-6">
+            <div className="bg-gradient-to-r from-pink-600 to-purple-500 py-4 px-8">
             <h3 className="text-xl font-bold text-white">Extensions</h3>
             </div>
             <div className="p-6">

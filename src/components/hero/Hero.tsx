@@ -7,7 +7,8 @@ export default function Hero() {
             Expert hair styling, coloring, and extensions in Kings Mountain, North Carolina.
           </p>
           <a
-            href="#location"
+            href="https://heathermelton.as.me/"
+            target="_blank"
             className="bg-pink-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-pink-700 transition-all shadow-md"
           >
             Book Your Appointment
