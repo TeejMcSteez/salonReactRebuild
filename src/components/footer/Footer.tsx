@@ -7,9 +7,6 @@ export default function Footer() {
           <span className="w-12 border-t border-pink-300 opacity-60 my-2"></span>
           <p className="text-gray-200 text-sm">Kings Mountain, North Carolina</p>
         </div>
-        <div className="mt-6 text-center text-xs text-pink-100 opacity-80">
-          &copy; {new Date().getFullYear()} Heather&apos;s Salon. All rights reserved.
-        </div>
       </div>
     </footer>
   );

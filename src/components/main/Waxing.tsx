@@ -1,3 +1,25 @@
+const waxOptions = [
+  {label: "Eyebrows", price: "$10"},
+  {label: "Lips", price: "$10"},
+  {label: "Chins", price: "$10"},
+  {label: "Face", price: "$10"},
+];
+
+function Wax({ options }: { options: { label: string; price: string }[] }) {
+  return (
+    <div>
+      <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        {options.map(({ label, price }) => (
+          <li key={label} className="flex justify-between py-2">
+            <span>{label}</span>
+            <span className="font-bold">{price}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function Waxing() {
     return(
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
@@ -5,20 +27,7 @@ export default function Waxing() {
                 <h3 className="text-xl font-bold text-white">Waxing</h3>
               </div>
               <div className="p-6">
-                <ul className="space-y-2">
-                  <li className="flex justify-between">
-                    <span>Eyebrows</span> <span className="font-bold">$10</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Lips</span> <span className="font-bold">$10</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Chin</span> <span className="font-bold">$10</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Face</span> <span className="font-bold">$30</span>
-                  </li>
-                </ul>
+                <Wax options={waxOptions} />
               </div>
             </div>
     );

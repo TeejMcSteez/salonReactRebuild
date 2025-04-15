@@ -1,3 +1,30 @@
+const womensHair = [
+  {label: "Dry Cut", price: "$35+"},
+  {label: "Shampoo/Cut/Style", price: "$35+"},
+  {label: "Shampoo Style", price: "$35+"},
+  {label: "Conditioning Treatment", price: "$35+"},
+];
+
+const mensHair = [
+  {label: "Hair Cut", price: "$20"},
+];
+
+function Haircut({ title, options }: { title: string; options: { label: string; price: string }[] }) {
+  return (
+    <div>
+      <h4 className="font-semibold text-lg mb-3 text-pink-500 dark:text-pink-400">{title}</h4>
+      <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        {options.map(({ label, price }) => (
+          <li key={label} className="flex justify-between py-2">
+            <span>{label}</span>
+            <span className="font-bold">{price}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function Haircuts() {
     return(
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
@@ -7,29 +34,10 @@ export default function Haircuts() {
               <div className="p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-lg mb-3 text-pink-500 dark:text-pink-400">Men</h4>
-                    <ul className="space-y-2">
-                      <li className="flex justify-between">
-                        <span>Hair Cut</span> <span className="font-bold">$20+</span>
-                      </li>
-                    </ul>
+                    <Haircut title="Mens" options={mensHair} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg mb-3 text-pink-500 dark:text-pink-400">Women</h4>
-                    <ul className="space-y-2">
-                      <li className="flex justify-between">
-                        <span>Dry Cut</span> <span className="font-bold">$30+</span>
-                      </li>
-                      <li className="flex justify-between">
-                        <span>Shampoo/Cut/Style</span> <span className="font-bold">$35+</span>
-                      </li>
-                      <li className="flex justify-between">
-                        <span>Shampoo Style</span> <span className="font-bold">$35+</span>
-                      </li>
-                      <li className="flex justify-between">
-                        <span>Conditioning Treatment</span> <span className="font-bold">$35+</span>
-                      </li>
-                    </ul>
+                    <Haircut title="Womens" options={womensHair} />
                   </div>
                 </div>
               </div>
