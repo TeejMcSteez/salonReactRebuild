@@ -1,8 +1,10 @@
 "use client";
 
+import Hero from "@/components/hero/Hero";
+import Header from "@/components/works/header/Header";
 import React, { useState, useMemo } from "react";
 
-function WorksPage() {
+export default function WorksPage() {
   const [currentCategory, setCurrentCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<{ src: string; category: string; title: string; description: string } | null>(null);
 
@@ -46,33 +48,10 @@ const openImage = (work: Work): void => {
   return (
     <div id="container" className="min-w-screen min-h-screen overflow-hidden bg-rose-50 text-gray-800">
       {/* Header with salon info */}
-      <header className="bg-white shadow-md">
-        <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-          <h1 className="text-3xl font-bold text-rose-600 mb-2 md:mb-0">
-            Beautiful Hair by Heather Melton
-          </h1>
-          <div className="flex items-center gap-6">
-            <a
-              href="/"
-              className="font-medium text-white bg-rose-600 rounded-xl hover:bg-rose-500 hover:text-rose-600 transition duration-300 py-2 px-4"
-            >
-              Home
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero banner */}
-      <div className="bg-gradient-to-r from-rose-300 to-purple-300 text-gray-900 py-10 md:py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Transforming Hair, Transforming Lives
-          </h2>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-90 mb-6">
-            Browse through my portfolio of real clients and amazing transformations.
-          </p>
-        </div>
-      </div>
+      <Hero />
 
       {/* Style category filter */}
       <div className="container mx-auto px-4 py-8">
@@ -230,5 +209,3 @@ const openImage = (work: Work): void => {
     </div>
   );
 }
-
-export default WorksPage;
