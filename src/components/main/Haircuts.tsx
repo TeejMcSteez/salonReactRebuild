@@ -7,6 +7,7 @@ const womensHair = [
 
 const mensHair = [
   {label: "Hair Cut", price: "$20"},
+  {label: "Beard Trim", price: "$10"}
 ];
 
 function Haircut({ title, options }: { title: string; options: { label: string; price: string }[] }) {
