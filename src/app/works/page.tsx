@@ -11,8 +11,8 @@ function WorksPage() {
     { src: "/assets/works/work2.jpg", category: "coloring", title: "Light Blonde", description: "Natural-looking sun-kissed highlights" },
     { src: "/assets/works/work3.jpg", category: "styling", title: "Color and Style", description: "Perfect color and style with flowing blowout" },
     { src: "/assets/works/work4.jpg", category: "haircuts", title: "Simple Cut", description: "Layered cut with even ends" },
-    { src: "/assets/works/work5.jpg", category: "coloring", title: "Vibrant Red", description: "Bold and vibrant red color transformation" },
-    { src: "/assets/works/work6.jpg", category: "styling", title: "Simple Cut with Highlights", description: "Elegant cut with highlights" }
+    { src: "/assets/works/work6.jpg", category: "coloring", title: "Vibrant Red", description: "Bold and vibrant red color transformation" },
+    { src: "/assets/works/work7.jpg", category: "styling", title: "Simple Cut with Highlights", description: "Elegant cut with highlights" }
   ];
 
   // Compute filtered works whenever currentCategory changes.
