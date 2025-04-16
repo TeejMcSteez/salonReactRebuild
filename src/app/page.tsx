@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Hero from '@/components/hero/Hero';
 import Services from '@/components/main/Services';
-import Footer from '@/components/footer/Footer';
-import NavHeader from '@/components/navbar/NavHeader';
+import Footer from '@/components/main/footer/Footer';
+import NavHeader from '@/components/main/navbar/NavHeader';
 
 export default function SalonApp() {
   const [showMenu, setShowMenu] = useState(false);

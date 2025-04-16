@@ -9,7 +9,8 @@ export default function Hero() {
           <a
             href="https://heathermelton.as.me/"
             target="_blank"
-            className="bg-pink-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-pink-700 transition-all shadow-md"
+            className="bg-pink-600 text-white px-8 py-3 rounded-full text-lg 
+            font-semibold hover:bg-pink-800 transition-all shadow-md"
           >
             Book Your Appointment
           </a>
