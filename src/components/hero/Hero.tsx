@@ -1,9 +1,36 @@
+import { useEffect, useState } from "react";
+
+function Typewrite({ text, speed }: { text: string; speed: number }) {
+    const [displayedText, setDisplayedText] = useState("");
+  
+    useEffect(() => {
+      let index = 0;
+      const interval = setInterval(() => {
+        if (index <= text.length) {
+          setDisplayedText(text.substring(0, index));
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, speed);
+      
+      return () => clearInterval(interval); // cleanup
+    }, [text, speed]);
+  
+    return (
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">
+          {displayedText}
+      </h2>
+    );
+  }
+
 export default function Hero() {
     return (
         <section className="bg-gradient-to-b from-pink-100 to-white dark:from-slate-800 dark:to-slate-900 py-16 shadow-lg">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">Transform Your Look</h2>
-          <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+
+        <Typewrite text="Transform your Look!" speed={40} />
+        <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Expert hair styling, coloring, and extensions in Kings Mountain, North Carolina.
           </p>
           <a
