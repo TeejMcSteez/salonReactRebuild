@@ -124,7 +124,7 @@ export default function LocationContact() {
             <a
               href="#location/"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="p-2 m-4 items-center justify-center text-center bg-pink-600 hover:bg-pink700 rounded-lg text-white font-bold"
+              className="p-2 m-4 items-center justify-center text-center bg-pink-600 hover:bg-pink700 rounded-lg text-white font-bold hover:scale-115 ease-in-out"
             >
               Back to Top
             </a>

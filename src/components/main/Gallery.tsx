@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 export default function Gallery() {
   const transformations = [
       { type: 'Before', image: './assets/before.jpg' },
@@ -5,7 +7,9 @@ export default function Gallery() {
   ];
 
   return (
-      <section id="gallery" className="my-16 ">
+      <motion.section id="gallery" className="my-16 "
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}>
           <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 text-pink-600 dark:text-pink-400">
                   Transformation Gallery
@@ -43,6 +47,6 @@ export default function Gallery() {
                   See More on Instagram
               </a>
           </div>
-      </section>
+      </motion.section>
   );
 }

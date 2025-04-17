@@ -17,7 +17,7 @@ function Haircut({ title, options }: { title: string; options: { label: string; 
       <ul className="divide-y divide-gray-200 dark:divide-gray-700">
         {options.map(({ label, price }) => (
           <li key={label} className="flex justify-between py-2">
-            <span>{label}</span>
+            <span className="font-semibold">{label}</span>
             <span className="font-bold">{price}</span>
           </li>
         ))}

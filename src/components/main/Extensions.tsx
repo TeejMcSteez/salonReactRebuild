@@ -9,7 +9,7 @@ export default function Extensions() {
                 Consultation Required (Prices provided at consultation)
             </p>
             <div className="flex justify-between items-center p-3 bg-pink-50 dark:bg-slate-700 rounded">
-                <span className="font-medium">Starting at</span>
+                <span className="text-xl">Starting at</span>
                 <span className="text-xl font-bold text-pink-600 dark:text-pink-400">$150+</span>
             </div>
             </div>
