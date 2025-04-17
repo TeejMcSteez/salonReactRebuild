@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section className="bg-gradient-to-b from-pink-100 to-white dark:from-slate-800 dark:to-slate-900 py-16">
+        <section className="bg-gradient-to-b from-pink-100 to-white dark:from-slate-800 dark:to-slate-900 py-16 shadow-lg">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">Transform Your Look</h2>
           <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">

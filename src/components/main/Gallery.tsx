@@ -15,7 +15,7 @@ export default function Gallery() {
               </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 m-2">
               {transformations.map(({ type, image }) => (
                   <div key={type} className="relative rounded-lg overflow-hidden shadow-lg group aspect-[3/4]">
                       <img

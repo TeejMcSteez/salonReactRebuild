@@ -1,9 +1,6 @@
 import ColorFoil from "./ColorFoil";
 import Extensions from "./Extensions";
-import Gallery from "./Gallery";
 import Haircuts from "./Haircuts";
-import LocationContact from "./LocationContact";
-import Policies from "./Policies";
 import Waxing from "./Waxing";
 
 export default function Services() {
@@ -32,15 +29,6 @@ export default function Services() {
             <Waxing />
           </div>
         </section>
-
-        {/* Gallery Section */}
-          <Gallery />
-
-        {/* Policies Section */}
-        <Policies />
-
-        {/* Location & Contact Section */}
-        <LocationContact />
       </main>
     );
 }

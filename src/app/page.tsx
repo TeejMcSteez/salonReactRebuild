@@ -1,10 +1,13 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Hero from '@/components/hero/Hero';
 import Services from '@/components/main/Services';
 import Footer from '@/components/main/footer/Footer';
 import NavHeader from '@/components/main/navbar/NavHeader';
+import Gallery from '@/components/main/Gallery'
+import Policies from '@/components/main/Policies';
+import LocationContact from '@/components/main/LocationContact';
 
 export default function SalonApp() {
   const [showMenu, setShowMenu] = useState(false);
@@ -17,16 +20,30 @@ export default function SalonApp() {
   return (
     <div className="min-h-screen dark:bg-slate-900 bg-gray-50">
       {/* Header and Navigation */}
-      <NavHeader toggleNavBar={toggleNavBar} showMenu={showMenu}/>
-
+      <NavHeader toggleNavBar={toggleNavBar} showMenu={showMenu} />
       {/* Hero Section */}
-      <Hero />
+
+        <Hero />
 
       {/* Main Content */}
-      <Services />
+
+        <Services />
+
+      {/* Gallery Section */}
+
+        <Gallery />
+
+      {/* Policies Section */}
+
+        <Policies />
+
+      {/* Location & Contact Section */}
+
+        <LocationContact />
 
       {/* Footer */}
-      <Footer />
+
+        <Footer />
     </div>
   );
 }

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Heather Meltons Website",
+  title: "Heather Melton",
   description: "Made by teejmcsteez.tech with Next",
 };
 

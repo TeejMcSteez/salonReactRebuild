@@ -8,7 +8,9 @@ export default function Header() {
           <div className="flex items-center gap-6">
             <a
               href="/"
-              className="font-medium text-white bg-rose-600 rounded-xl hover:bg-rose-500 hover:text-rose-600 transition duration-300 py-2 px-4"
+              className="font-medium text-white bg-rose-600 rounded-xl
+              hover:bg-rose-500 hover:text-rose-600 transition duration-300
+              py-2 px-4 m-2 md:m-4"
             >
               Home
             </a>
