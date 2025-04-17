@@ -7,6 +7,7 @@ import GalleryGrid from "@/components/works/GalleryGrid";
 import Header from "@/components/works/Header";
 import StyleFilter from "@/components/works/StyleFilter"
 import React, { useState, useRef, useMemo } from "react";
+import { motion } from "motion/react";
 
 export default function WorksPage() {
   const [currentCategory, setCurrentCategory] = useState("all");
@@ -52,8 +53,11 @@ export default function WorksPage() {
   };
 
   return (
-    <div id="container" className="min-w-screen min-h-screen overflow-hidden bg-rose-50 text-gray-800"
-      ref={topRef}>
+    <motion.div id="container" className="min-w-screen min-h-screen overflow-hidden bg-rose-50 text-gray-800"
+      ref={topRef}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0}}>
       {/* Header with salon info */}
       <Header />
 
@@ -78,6 +82,6 @@ export default function WorksPage() {
       {/* Footer */}
       <Footer scrollTop={scrollTop} />
 
-    </div>
+    </motion.div>
   );
 }
