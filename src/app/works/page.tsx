@@ -4,31 +4,23 @@ import Footer from "@/components/works/Footer";
 import Hero from "@/components/hero/Hero";
 import FullscreenModal from "@/components/works/FullscreenModal";
 import Header from "@/components/works/Header";
-import StyleFilter from "@/components/works/StyleFilter"
 import React, { useState, useRef, useMemo } from "react";
 import { motion } from "motion/react";
 import RollingGallery from "@/components/works/RollingGallery";
+import BAAdvert from "@/components/works/BAAdvert";
 
 export default function WorksPage() {
-  const [currentCategory, setCurrentCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<{ src: string; category: string; title: string; description: string } | null>(null);
   const topRef = useRef<HTMLDivElement | null>(null)
 
-  // Compute filtered works whenever currentCategory changes.
-  const filteredWorks = useMemo(() => {
-    const works = [
-        { src: "/assets/works/work1.jpg", category: "coloring", title: "Flowing Curls", description: "Flowing curls with light blonde hair" },
-        { src: "/assets/works/work2.jpg", category: "coloring", title: "Light Blonde", description: "Natural-looking sun-kissed highlights" },
-        { src: "/assets/works/work3.jpg", category: "styling", title: "Color and Style", description: "Perfect color and style with flowing blowout" },
-        { src: "/assets/works/work4.jpg", category: "haircuts", title: "Simple Cut", description: "Layered cut with even ends" },
-        { src: "/assets/works/work6.jpg", category: "coloring", title: "Vibrant Red", description: "Bold and vibrant red color transformation" },
-        { src: "/assets/works/work7.jpg", category: "styling", title: "Simple Cut with Highlights", description: "Elegant cut with highlights" }
-    ];
-    
-    return currentCategory === "all"
-      ? works
-      : works.filter((work) => work.category === currentCategory);
-  }, [currentCategory]);
+  const works = [
+    { src: "/assets/works/work1.jpg", category: "coloring", title: "Flowing Curls", description: "Flowing curls with light blonde hair" },
+    { src: "/assets/works/work2.jpg", category: "coloring", title: "Light Blonde", description: "Natural-looking sun-kissed highlights" },
+    { src: "/assets/works/work3.jpg", category: "styling", title: "Color and Style", description: "Perfect color and style with flowing blowout" },
+    { src: "/assets/works/work4.jpg", category: "haircuts", title: "Simple Cut", description: "Layered cut with even ends" },
+    { src: "/assets/works/work6.jpg", category: "coloring", title: "Vibrant Red", description: "Bold and vibrant red color transformation" },
+    { src: "/assets/works/work7.jpg", category: "styling", title: "Simple Cut with Highlights", description: "Elegant cut with highlights" }
+  ];
 
   // Scroll to top of the page smoothly.
   const scrollTop = () => {
@@ -64,16 +56,15 @@ export default function WorksPage() {
       {/* Hero banner */}
       <Hero />
 
+      <BAAdvert />
+
       {/* Style category filter */}
       <div className="container mx-auto px-4 py-8">
         <h3 className="text-2xl font-semibold text-center mb-6">My Latest Work</h3>
-        <h3 className="flex items-center justify-center p-1 m-2 text-xs font-semibold">Current Filter:
-          {" " + currentCategory.charAt(0).toLocaleUpperCase() + currentCategory.substring(1)}</h3>
-        <StyleFilter currentCategory={currentCategory} setCurrentCategory={setCurrentCategory} />
 
         {/* Gallery grid with larger images */}
-        <h2 className="flex items-center justify-center font-bold p-1 m-1">Click on a work below to view</h2>
-        <RollingGallery autoplay={true} pauseOnHover={true} images={filteredWorks.map(work => work.src)} openImage={openImage} />
+        <RollingGallery autoplay={true} pauseOnHover={true} images={works.map(work => work.src)} openImage={openImage} />
+        <h2 className="flex items-center justify-center font-bold p-1 m-1">Click on a work above to view</h2>
       </div>
 
       {/* Fullscreen image viewer modal */}
