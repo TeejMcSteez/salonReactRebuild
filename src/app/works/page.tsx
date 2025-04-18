@@ -3,11 +3,11 @@
 import Footer from "@/components/works/Footer";
 import Hero from "@/components/hero/Hero";
 import FullscreenModal from "@/components/works/FullscreenModal";
-import GalleryGrid from "@/components/works/GalleryGrid";
 import Header from "@/components/works/Header";
 import StyleFilter from "@/components/works/StyleFilter"
 import React, { useState, useRef, useMemo } from "react";
 import { motion } from "motion/react";
+import RollingGallery from "@/components/works/RollingGallery";
 
 export default function WorksPage() {
   const [currentCategory, setCurrentCategory] = useState("all");
@@ -71,7 +71,8 @@ export default function WorksPage() {
         <StyleFilter currentCategory={currentCategory} setCurrentCategory={setCurrentCategory} />
 
         {/* Gallery grid with larger images */}
-        <GalleryGrid filteredWorks={filteredWorks} openImage={openImage} />
+        <h2 className="flex items-center justify-center font-bold p-1 m-1">Click on a work below to view</h2>
+        <RollingGallery autoplay={true} pauseOnHover={true} images={filteredWorks.map(work => work.src)} openImage={openImage} />
       </div>
 
       {/* Fullscreen image viewer modal */}
