@@ -1,6 +1,6 @@
 {
   "name": "salon-next",
-  "version": "2.2.0",
+  "version": "3.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^12.7.4",
     "motion": "^12.7.4",
     "next": "15.3.0",
     "react": "^19.0.0",
