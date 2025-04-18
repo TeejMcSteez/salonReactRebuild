@@ -1,6 +1,7 @@
 // Credit: https://www.reactbits.dev/components/rolling-gallery
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   motion,
   useMotionValue,
@@ -16,6 +17,13 @@ interface imgObject {
   description: string;
 }
 
+interface RollingGalleryProps {
+    autoplay?: boolean;
+    pauseOnHover?: boolean;
+    images?: string[];
+    openImage: (work: {src: string, category: string, title: string, description: string}) => void;
+  }
+
 const IMGS: Array<imgObject> = [
     { src: "/assets/works/work1.jpg", category: "coloring", title: "Flowing Curls", description: "Flowing curls with light blonde hair" },
     { src: "/assets/works/work2.jpg", category: "coloring", title: "Light Blonde", description: "Natural-looking sun-kissed highlights" },
@@ -24,13 +32,6 @@ const IMGS: Array<imgObject> = [
     { src: "/assets/works/work6.jpg", category: "coloring", title: "Vibrant Red", description: "Bold and vibrant red color transformation" },
     { src: "/assets/works/work7.jpg", category: "styling", title: "Simple Cut with Highlights", description: "Elegant cut with highlights" }
 ];
-
-interface RollingGalleryProps {
-  autoplay?: boolean;
-  pauseOnHover?: boolean;
-  images?: string[];
-  openImage: (work: {src: string, category: string, title: string, description: string}) => void;
-}
 
 const RollingGallery: React.FC<RollingGalleryProps> = ({
   autoplay = false,
@@ -85,18 +86,18 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoplay]);
-
+  // eslint-disable-next-line
   const handleUpdate = (latest: any) => {
     if (typeof latest.rotateY === "number") {
       rotation.set(latest.rotateY);
     }
   };
-
+  // eslint-disable-next-line
   const handleDrag = (_: any, info: PanInfo): void => {
     controls.stop();
     rotation.set(rotation.get() + info.offset.x * dragFactor);
   };
-
+  // eslint-disable-next-line
   const handleDragEnd = (_: any, info: PanInfo): void => {
     const finalAngle = rotation.get() + info.velocity.x * dragFactor;
     rotation.set(finalAngle);
@@ -119,7 +120,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   };
 
   return (
-    <div className="relative h-[500px] w-full overflow-hidden">
+    <div className="relative h-[500px] md:h-[800px] w-full overflow-hidden">
       <div
         className="absolute top-0 left-0 h-full w-[48px] z-10"
       />
@@ -142,7 +143,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
             width: cylinderWidth,
             transformStyle: "preserve-3d",
           }}
-          className="flex min-h-[200px] cursor-grab items-center justify-center [transform-style:preserve-3d]"
+          className="flex min-h-[200px] md:cursor-grab items-center justify-center [transform-style:preserve-3d]"
         >
           {galleryImages.map((img, i) => (
             <div
@@ -154,10 +155,10 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
               }}
               onClick={() => openImage(IMGS[i])}
             >
-              <img
+              <Image
                 src={typeof img === "string" ? img : img.src}
                 alt="gallery image"
-                className="pointer-events-none h-[250px] w-[300px] rounded-[15px] border-[3px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
+                className="pointer-events-none h-[250px] w-[200px] sm:h-[300px] sm:w-[300px] rounded-[15px] border-[3px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
               />
             </div>
           ))}

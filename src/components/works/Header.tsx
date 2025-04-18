@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
     return (
         <header className="bg-white shadow-md">
@@ -6,14 +8,14 @@ export default function Header() {
             Beautiful Hair by Heather Melton
           </h1>
           <div className="flex items-center gap-6">
-            <a
+            <Link
               href="/"
               className="font-medium text-white bg-rose-600 rounded-xl
               hover:bg-rose-300 hover:text-slate-900 transition duration-300
               py-2 px-4 m-2 md:m-4"
             >
               Home
-            </a>
+            </Link>
           </div>
         </div>
       </header>

@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 
 function Typewrite({ text, speed, renderCount }: { text: string; speed: number; renderCount: number }) {
-    if (renderCount > 1) {
-        return (
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">
-                Transform your Look!
-            </h2>
-        );
-    }
     const [displayedText, setDisplayedText] = useState("");
   
     useEffect(() => {
+      if (renderCount > 1) {
+        setDisplayedText(text);
+        return;
+      }
       let index = 0;
       const interval = setInterval(() => {
         if (index <= text.length) {
@@ -22,7 +19,7 @@ function Typewrite({ text, speed, renderCount }: { text: string; speed: number; 
       }, speed);
       
       return () => clearInterval(interval); // cleanup
-    }, [text, speed]);
+    }, [text, speed, renderCount]);
   
     return (
       <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">

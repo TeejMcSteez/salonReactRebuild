@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Nunito, Space_Grotesk } from "next/font/google";
+import { Inter, Nunito } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({

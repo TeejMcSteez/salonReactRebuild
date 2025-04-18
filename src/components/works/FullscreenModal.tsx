@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface FullscreenModalProps {
   closeImage: () => void;
   selectedImage: {
@@ -17,7 +19,7 @@ export default function FullscreenModal({ closeImage, selectedImage }: Fullscree
             className="relative max-w-5xl w-full h-full flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={selectedImage.src}
               alt={selectedImage.title}
               className="max-w-full max-h-full object-contain"

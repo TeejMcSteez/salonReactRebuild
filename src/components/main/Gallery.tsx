@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function Gallery() {
   const transformations = [
@@ -22,7 +23,7 @@ export default function Gallery() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 m-2">
               {transformations.map(({ type, image }) => (
                   <div key={type} className="relative rounded-lg overflow-hidden shadow-lg group aspect-[3/4]">
-                      <img
+                      <Image
                           src={image}
                           alt={`${type} transformation`}
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

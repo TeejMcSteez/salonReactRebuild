@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Hero from '@/components/hero/Hero';
 import Services from '@/components/main/Services';
 import Footer from '@/components/main/footer/Footer';
