@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Gallery() {
   const transformations = [
-      { type: 'Before', image: './assets/before.jpg' },
-      { type: 'After', image: './assets/after.jpg' }
+      { type: 'Before', image: '/assets/before.jpg' },
+      { type: 'After', image: '/assets/after.jpg' }
   ];
 
   return (
@@ -26,6 +26,8 @@ export default function Gallery() {
                       <Image
                           src={image}
                           alt={`${type} transformation`}
+                          width={500}
+                          height={500}
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">

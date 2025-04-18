@@ -22,6 +22,8 @@ export default function FullscreenModal({ closeImage, selectedImage }: Fullscree
             <Image
               src={selectedImage.src}
               alt={selectedImage.title}
+              height={1250}
+              width={1250}
               className="max-w-full max-h-full object-contain"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4 text-center">

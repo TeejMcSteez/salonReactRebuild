@@ -157,6 +157,8 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
             >
               <Image
                 src={typeof img === "string" ? img : img.src}
+                height={500}
+                width={500}
                 alt="gallery image"
                 className="pointer-events-none h-[250px] w-[200px] sm:h-[300px] sm:w-[300px] rounded-[15px] border-[3px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
               />
