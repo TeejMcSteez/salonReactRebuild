@@ -4,7 +4,7 @@ import Footer from "@/components/works/Footer";
 import Hero from "@/components/hero/Hero";
 import FullscreenModal from "@/components/works/FullscreenModal";
 import Header from "@/components/works/Header";
-import React, { useState, useRef, useMemo } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "motion/react";
 import RollingGallery from "@/components/works/RollingGallery";
 import BAAdvert from "@/components/works/BAAdvert";
@@ -60,7 +60,7 @@ export default function WorksPage() {
 
       {/* Style category filter */}
       <div className="container mx-auto px-4 py-8">
-        <h3 className="text-2xl font-semibold text-center mb-6">My Latest Work</h3>
+        <h3 className="text-2xl font-semibold text-center mb-1">My Latest Work</h3>
 
         {/* Gallery grid with larger images */}
         <RollingGallery autoplay={true} pauseOnHover={true} images={works.map(work => work.src)} openImage={openImage} />
