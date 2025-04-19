@@ -18,9 +18,18 @@ export default function WorksPage() {
     { src: "/assets/works/work1.jpg", category: "coloring", title: "Flowing Curls", description: "Flowing curls with light blonde hair" },
     { src: "/assets/works/work2.jpg", category: "coloring", title: "Light Blonde", description: "Natural-looking sun-kissed highlights" },
     { src: "/assets/works/work3.jpg", category: "styling", title: "Color and Style", description: "Perfect color and style with flowing blowout" },
-    { src: "/assets/works/work4.jpg", category: "haircuts", title: "Simple Cut", description: "Layered cut with even ends" },
+    { src: "/assets/works/work4.jpg", category: "haircuts", title: "Simple Cut with Curls", description: "Layered cut with flowing curls" },
     { src: "/assets/works/work6.jpg", category: "coloring", title: "Vibrant Red", description: "Bold and vibrant red color transformation" },
-    { src: "/assets/works/work7.jpg", category: "styling", title: "Simple Cut with Highlights", description: "Elegant cut with highlights" }
+    { src: "/assets/works/work7.jpg", category: "styling", title: "Simple Cut with Highlights", description: "Elegant cut with highlights" },
+
+    { src: "/assets/works/work8.jpg", category: "styling", title: "Cut with Highlights", description: "Beautiful cuts with simple highlights" },
+    { src: "/assets/works/work9.jpg", category: "coloring", title: "Vibrant Color", description: "Stark tranformation to a bold red" },
+    { src: "/assets/works/work10.jpg", category: "haircuts", title: "Bob Cut with Highlights", description: "Great up-do for quick and clean styling" },
+    { src: "/assets/works/work11.jpg", category: "styling", title: "Cut with Flowing Curls", description: "Beautiful blonde with long flowing curls" },
+    { src: "/assets/works/work12.jpg", category: "haircuts", title: "Layered Cut", description: "Distinguished layered cut" },
+    { src: "/assets/works/work13.jpg", category: "coloring", title: "80's Baby", description: "Voluminous, wavy style" },
+    { src: "/assets/works/work14.jpg", category: "coloring", title: "Blonde with Cut", description: "Silver blonde with style" },
+    { src: "/assets/works/work15.jpg", category: "haircuts", title: "Simple Cut", description: "Simple cut with even ends" },    
   ];
 
   // Compute filtered works whenever currentCategory changes.
